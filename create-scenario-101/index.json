@@ -34,7 +34,8 @@
     }
   },
   "environment": {
-    "uilayout": "editor-terminal-split"
+    "showdashboard": false,
+    "uilayout": "terminal-iframe"
   },
   "backend": {
     "imageid": "openjdk:11"
