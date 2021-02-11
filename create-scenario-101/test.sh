@@ -8,7 +8,7 @@ done
 
 export CLASSPATH= /usr/local/bin
 
-mkdir /usr/local/bin/com/hazelcast/jet/examples/helloworld
+mkdir -p /usr/local/bin/com/hazelcast/jet/examples/helloworld
 
 cp /usr/local/bin/HelloWorld.class /usr/local/bin/com/hazelcast/jet/examples/helloworld
 
