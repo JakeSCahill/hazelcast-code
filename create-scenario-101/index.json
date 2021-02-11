@@ -37,7 +37,7 @@
         "host01": [
             {"file": "src/main/java/com/hazelcast/jet/examples/helloworld/HelloWorld.java", "target": "/usr/local/bin/", "chmod": "+x"},
             {"file": "pom.xml", "target": "/usr/local/bin/", "chmod": "+x"},
-            {"file": "src/main/resources.yaml", "target": "/usr/local/bin/", "chmod": "+x"}
+            {"file": "src/main/resources/hazelcast.yaml", "target": "/usr/local/bin/", "chmod": "+x"}
         ]
     }
   },
