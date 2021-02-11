@@ -6,4 +6,6 @@ do
   sleep .2
 done
 
+cp /usr/local/bin/HelloWorld.class /usr/local/bin/com/hazelcast/jet/examples/helloworld
+
 chmod 755 /usr/local/bin/HelloWorld.class; java -cp /usr/local/bin/ HelloWorld
