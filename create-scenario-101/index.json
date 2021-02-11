@@ -35,10 +35,11 @@
     },
     "assets": {
         "host01": [
-            {"file": "src/main/java/com/hazelcast/jet/examples/helloworld/HelloWorld.java", "target": "/usr/local/bin/hazelcast/jet/examples/helloworld/src/main/java/com/hazelcast/jet/examples/helloworld", "chmod": "+x"},
-            {"file": "pom.xml", "target": "/usr/local/bin/hazelcast/jet/examples/helloworld", "chmod": "+x"},
-            {"file": "src/main/resources/hazelcast.yaml", "target": "/usr/local/bin/hazelcast/jet/examples/helloworld/src/main/resources", "chmod": "+x"},
-            {"file": "src/main/resources/pom.xml", "target": "/usr/local/bin/hazelcast/jet/examples", "chmod": "+x"}
+            {"file": "hazelcast-jet/pom.xml", "target": "/usr/local/bin/hazelcast-jet", "chmod": "+x"},
+            {"file": "hazelcast-jet/examples/pom.xml", "target": "/usr/local/bin/hazelcast-jet/examples", "chmod": "+x"},
+            {"file": "hazelcast-jet/examples/hello-world/pom.xml", "target": "/usr/local/bin/hazelcast-jet/examples/hello-world", "chmod": "+x"},
+            {"file": "hazelcast-jet/examples/hello-world/src/main/java/com/hazelcast/jet/examples/helloworld/HelloWorld.java", "target": "/usr/local/bin/hazelcast-jet/examples/hello-world/src/main/java/com/hazelcast/jet/examples/helloworld", "chmod": "+x"},
+            {"file": "hazelcast-jet/examples/hello-world/src/main/resources/hazelcast.yaml", "target": "/usr/local/bin/hazelcast-jet/examples/hello-world/src/main/resources/hazelcast.yaml", "chmod": "+x"}
           ]
     }
   },
