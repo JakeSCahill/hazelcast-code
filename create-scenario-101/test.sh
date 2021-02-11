@@ -1,9 +1,9 @@
 #!/bin/bash
 echo "Starting Jet"
 clear
-cd /usr/local
-chmod +x bin/jet-start
-chmod +x bin/jet
-chmod +x bin/jet-stop
-chmod +x bin/common.sh
-bin/jet-start
+cd /usr/local/bin
+chmod +x jet-start
+chmod +x jet
+chmod +x jet-stop
+chmod +x common.sh
+jet-start

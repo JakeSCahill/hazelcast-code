@@ -21,6 +21,68 @@
         {
           "file": "jet-start",
           "target": "/usr/local/bin"
+        },
+        {
+          "file": "lib/hazelcast-download.properties",
+          "target": "/usr/local/lib"
+        },
+        {
+          "file": "lib/hazelcast-jet-4.4.jar",
+          "target": "/usr/local/lib"
+        },
+        {
+          "file": "lib/hazelcast-jet-sql-4.4.jar",
+          "target": "/usr/local/lib"
+        },
+        {
+          "file": "lib/log4j-api-2.13.3.jar",
+          "target": "/usr/local/lib"
+        }
+        ,
+        {
+          "file": "lib/log4j-core-2.13.3.jar",
+          "target": "/usr/local/lib"
+        }
+        ,
+        {
+          "file": "lib/log4j-slf4j-impl-2.13.3.jar",
+          "target": "/usr/local/lib"
+        }
+        ,
+        {
+          "file": "lib/slf4j-api-1.7.28.jar",
+          "target": "/usr/local/lib"
+        },
+        {
+          "file": "config/hazelcast-client.yaml",
+          "target": "/usr/local/config"
+        },
+        {
+          "file": "config/hazelcast-jet.yaml",
+          "target": "/usr/local/config"
+        },
+        {
+          "file": "config/hazelcast.yaml",
+          "target": "/usr/local/config"
+        },
+        {
+          "file": "config/jmx_agent_config.yaml",
+          "target": "/usr/local/config"
+        }
+        ,
+        {
+          "file": "config/jvm-client.options",
+          "target": "/usr/local/config"
+        }
+        ,
+        {
+          "file": "config/jvm.options",
+          "target": "/usr/local/config"
+        }
+        ,
+        {
+          "file": "config/log4j2.properties",
+          "target": "/usr/local/config"
         }
       ]
     },
