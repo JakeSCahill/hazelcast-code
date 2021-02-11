@@ -1,15 +1,16 @@
 #!/bin/bash
 clear
-while [ ! -f /usr/local/bin/hazelcast-jet-examples-hello-world-4.5-SNAPSHOT.jar ]
+while [ ! -f /usr/local/bin/HelloWorld.java ]
 do
   clear
   sleep .2
 done
 
-mkdir -p /usr/local/bin/com/hazelcast/jet/examples/helloworld
+mkdir -p /usr/local/bin/src/main/java/com/hazelcast/jet/examples/helloworld
 
-cp /usr/local/bin/HelloWorld.class /usr/local/bin/com/hazelcast/jet/examples/helloworld
+cp /usr/local/bin/HelloWorld.class /usr/local/bin/src/main/java/com/hazelcast/jet/examples/helloworld
 
 cd /usr/local/bin
 
-chmod 755 HelloWorld.class; java -cp . com.hazelcast.jet.examples.helloworld.HelloWorld
+mvn exec:java -Dexec.mainClass=com.hazelcast.jet.examples.helloworld.HelloWorld
+ 
