@@ -4,6 +4,26 @@
   "difficulty": "Beginner",
   "time": "10",
   "details": {
+    "assets": {
+      "host01": [
+        {
+          "file": "common.sh",
+          "target": "/usr/local/bin"
+        },
+        {
+          "file": "jet",
+          "target": "/usr/local/bin"
+        },
+        {
+          "file": "jet-stop",
+          "target": "/usr/local/bin"
+        },
+        {
+          "file": "jet-start",
+          "target": "/usr/local/bin"
+        }
+      ]
+    },
     "steps": [
       {
         "title": "Step 1",
