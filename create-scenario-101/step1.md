@@ -3,7 +3,7 @@
 <pre>`echo "Run in T1"`{{execute T1}}</pre>
 
 
-`echo "Run in T2"`{{execute T2}}
+`cd /usr/local/tmp/hazelcast-jet-4.4 \ bin/jet-start`{{execute T2}}
 
 <pre>`echo "Run in T2"`{{execute T2}}</pre>
 
