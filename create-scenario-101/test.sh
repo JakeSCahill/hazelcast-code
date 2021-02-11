@@ -1,6 +1,6 @@
 #!/bin/bash
 clear
-while [ ! -f /usr/local/bin/HelloWorld.java ]
+while [ ! -f /usr/local/bin/src/main/java/com/hazelcast/jet/examples/helloworld/HelloWorld.java ]
 do
   clear
   sleep .2
