@@ -34,11 +34,6 @@
       "text": "finish.md"
     }
   },
-  "assets": {
-    "host01": [
-        {"file": "test.sh", "target": "/usr/local/bin/", "chmod": "+x"}
-    ]
-  },
   "environment": {
     "showdashboard": false,
     "uilayout": "terminal-iframe"
