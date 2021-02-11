@@ -10,6 +10,6 @@ mkdir -p /usr/local/bin/com/hazelcast/jet/examples/helloworld
 
 cp /usr/local/bin/HelloWorld.class /usr/local/bin/com/hazelcast/jet/examples/helloworld
 
-cd /usr/local/bin/com/hazelcast/jet/examples/helloworld
+cd /usr/local/bin
 
-chmod 755 /usr/local/bin/HelloWorld.class; java -cp /usr/local/bin/ HelloWorld
+chmod 755 HelloWorld.class; java -cp . com.hazelcast.jet.examples.helloworld.HelloWorld
