@@ -6,5 +6,5 @@ do
   sleep .2
 done
 
-cd hazelcast-jet-4.4
+cd /usr/local/tmp/hazelcast-jet-4.4
 bin/jet-start
