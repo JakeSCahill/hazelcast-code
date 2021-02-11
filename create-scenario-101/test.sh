@@ -6,7 +6,7 @@ do
   sleep .2
 done
 
-cd /usr/local/bin/hazelcast/jet/examples/helloworld
+cd //usr/local/bin/hazelcast-jet/examples/hello-world
 
 mvn exec:java -Dexec.mainClass=com.hazelcast.jet.examples.helloworld.HelloWorld
  
