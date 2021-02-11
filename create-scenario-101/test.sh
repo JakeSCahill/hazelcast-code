@@ -10,4 +10,4 @@ chmod +x jet-start
 chmod +x jet
 chmod +x jet-stop
 chmod +x common.sh
-jet-start
+./jet-start
