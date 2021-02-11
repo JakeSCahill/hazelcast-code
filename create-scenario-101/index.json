@@ -35,7 +35,8 @@
     },
     "assets": {
         "host01": [
-            {"file": "hazelcast-jet-examples-hello-world-4.5-SNAPSHOT.jar", "target": "/usr/local/bin/", "chmod": "+x"}
+            {"file": "hazelcast-jet-examples-hello-world-4.5-SNAPSHOT.jar", "target": "/usr/local/bin/", "chmod": "+x"},
+            {"file": "hazelcast-jet-examples-hello-world-4.5-SNAPSHOT-sources.jar", "target": "/usr/local/bin/", "chmod": "+x"}
         ]
     }
   },
