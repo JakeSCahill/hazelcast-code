@@ -8,6 +8,7 @@
       {
         "title": "Step 1",
         "text": "step1.md",
+        "courseData": "setup.sh",
         "code": "test.sh"
       },
       {
@@ -32,15 +33,6 @@
     },
     "finish": {
       "text": "finish.md"
-    },
-    "assets": {
-        "host01": [
-            {"file": "hazelcast-jet/pom.xml", "target": "/usr/local/bin/hazelcast-jet", "chmod": "+x"},
-            {"file": "hazelcast-jet/examples/pom.xml", "target": "/usr/local/bin/hazelcast-jet/examples", "chmod": "+x"},
-            {"file": "hazelcast-jet/examples/hello-world/pom.xml", "target": "/usr/local/bin/hazelcast-jet/examples/hello-world", "chmod": "+x"},
-            {"file": "hazelcast-jet/examples/hello-world/src/main/java/com/hazelcast/jet/examples/helloworld/HelloWorld.java", "target": "/usr/local/bin/hazelcast-jet/examples/hello-world/src/main/java/com/hazelcast/jet/examples/helloworld", "chmod": "+x"},
-            {"file": "hazelcast-jet/examples/hello-world/src/main/resources/hazelcast.yaml", "target": "/usr/local/bin/hazelcast-jet/examples/hello-world/src/main/resources/hazelcast.yaml", "chmod": "+x"}
-          ]
     }
   },
   "environment": {
