@@ -1,3 +1,9 @@
 #katacoda-container, #katacoda-scenario-1 {
-  height: 100% im !important;
+  height: 100% !important;
+  font-family: "Open Sans", sans-serif !important;
+  color: #041a3b !important;
+}
+
+button.primary-btn.btn, .primary-btn.btn {
+  background: #008a00 !important;
 }
