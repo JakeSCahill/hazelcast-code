@@ -6,12 +6,12 @@
   "details": {
     "steps": [
       {
-        "title": "Step 1",
+        "title": "Start Hazelcast",
         "text": "step1.md",
         "code": "test.sh"
       },
       {
-        "title": "Step 2",
+        "title": "Start an SQL Shell",
         "text": "step2.md"
       },
       {
