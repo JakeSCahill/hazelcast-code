@@ -27,15 +27,13 @@
         "text": "step5.md"
       }
     ],
-    "intro": {
-      "text": "intro.md"
-    },
     "finish": {
       "text": "finish.md"
     }
   },
   "environment": {
     "showdashboard": false,
+    "hideintro": true,
     "uilayout": "terminal-iframe"
   },
   "backend": {
