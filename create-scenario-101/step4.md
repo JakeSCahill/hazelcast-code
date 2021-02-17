@@ -3,4 +3,3 @@ You can send data directly to your IMap, using the `SINK INTO` clause. This clau
 ```sql
 SINK INTO myMap VALUES (1, 'Jake', 29);
 ```
-{{execute T2}}

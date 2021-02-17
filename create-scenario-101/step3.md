@@ -12,7 +12,6 @@ OPTIONS (
     'keyFormat'='bigint',
     'valueFormat'='json');
 ```
-{{execute T2}}
 
 **Note:** Identifiers such as table and column names are case-sensitive. If your identifier contains special characters, wrap them in double quotes ("").
 

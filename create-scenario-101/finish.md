@@ -1,3 +1,1 @@
-Congratulations!
-
 To continue learning about Hazelcast, go back to the [documentation](https://platform-prototype--nifty-wozniak-71a44b.netlify.app/platform/5.0.0).
