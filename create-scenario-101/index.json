@@ -8,23 +8,22 @@
       {
         "title": "Start Hazelcast",
         "text": "step1.md",
-        "code": "start-member.sh"
+        "code": "test.sh"
       },
       {
         "title": "Start an SQL Shell",
         "text": "step2.md"
       },
       {
-        "title": "Start a Kafka Server",
-        "text": "step3.md",
-        "code": "start-kafka.sh"
+        "title": "Step 3",
+        "text": "step3.md"
       },
       {
-        "title": "Write a Streaming Query",
+        "title": "Step 4",
         "text": "step4.md"
       },
       {
-        "title": "Push Messages to Kafka",
+        "title": "Step 5",
         "text": "step5.md"
       }
     ],
