@@ -8,22 +8,22 @@
       {
         "title": "Start Hazelcast",
         "text": "step1.md",
-        "code": "test.sh"
+        "code": "start-member.sh"
       },
       {
         "title": "Start an SQL Shell",
         "text": "step2.md"
       },
       {
-        "title": "Step 3",
+        "title": "Create an IMap",
         "text": "step3.md"
       },
       {
-        "title": "Step 4",
+        "title": "Ingest Data into your IMap",
         "text": "step4.md"
       },
       {
-        "title": "Step 5",
+        "title": "Query your IMap",
         "text": "step5.md"
       }
     ],
