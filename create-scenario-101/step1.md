@@ -1,8 +1,8 @@
 This tutorial walks you through the most essential Hazelcast SQL statements.
 
-To get you started, we're installing Hazelcast and starting a single-node demo cluster.
+To get you started, we're installing Hazelcast and starting a Hazelcast member.
 
-Before clicking *Continue*, wait until you see the following in the terminal:
+Before clicking **Continue**, wait until you see the following in the terminal:
 
 ```bash
 Members {size:1, ver:1} [
