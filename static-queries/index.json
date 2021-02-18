@@ -2,7 +2,7 @@
   "title": "Getting Started",
   "description": "An interactive introduction to Hazelcast",
   "difficulty": "Beginner",
-  "time": "10",
+  "time": "5",
   "details": {
     "steps": [
       {
@@ -15,16 +15,8 @@
         "text": "step2.md"
       },
       {
-        "title": "Create an IMap",
+        "title": "Ingest and Query Static Data from a File",
         "text": "step3.md"
-      },
-      {
-        "title": "Ingest Data into your IMap",
-        "text": "step4.md"
-      },
-      {
-        "title": "Query your IMap",
-        "text": "step5.md"
       }
     ],
     "finish": {
