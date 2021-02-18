@@ -1,3 +1,3 @@
 Click the text below to start the SQL shell
 
-`hazelcast sql`{{execute T2}}
+`/usr/local/bin/hazelcast-5.0-SNAPSHOT-slim/bin/hazelcast sql`{{execute T2}}
