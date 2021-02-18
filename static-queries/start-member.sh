@@ -11,7 +11,7 @@ chmod +x hazelcast
 chmod +x hazelcast-stop
 chmod +x common.sh
 mkdir csv-dir
-printf "id,name,like\n" >> csv-dir/likes.csv
+printf "id,name,likes\n" >> csv-dir/likes.csv
 printf "1,Jerry,13\n" >> csv-dir/likes.csv
 printf "2,Greg,108\n" >> csv-dir/likes.csv
 printf "3,Mary,73\n" >> csv-dir/likes.csv
