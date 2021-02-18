@@ -14,7 +14,7 @@ id,name,likes
     CREATE MAPPING csv_likes (id INT, name VARCHAR, likes INT)
     TYPE File
     OPTIONS ('format'='csv',
-        'path'='/csv-dir', 'glob'='likes.csv');
+        'path'='/usr/local/bin/hazelcast-5.0-SNAPSHOT-slim/bin', 'glob'='likes.csv');
     ```
 
     **Note:** Hazelcast SQL does not have a native storage system. Instead it uses external mappings to access various resources as if they were tables.
