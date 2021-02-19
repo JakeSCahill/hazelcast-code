@@ -1,4 +1,4 @@
-In this step, you load data from a `.csv` file that has the following contents:
+In this step, you load and query data from a `.csv` file that has the following contents:
 
 ```
 id,name,likes
@@ -8,7 +8,7 @@ id,name,likes
 4,Jerry,88
 ```
 
-1. . Use the `CREATE MAPPING` statement to give Hazelcast access to the data in the `likes.csv` file.
+1. Use the `CREATE MAPPING` statement to give Hazelcast access to the data in the `likes.csv` file.
 
     <code class="execute T2" title="Run command">
     CREATE MAPPING csv_likes (id INT, name VARCHAR, likes INT) TYPE File OPTIONS ('format'='csv','path'='/usr/local/bin/hazelcast-5.0-SNAPSHOT/bin/csv-dir', 'glob'='likes.csv');
