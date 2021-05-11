@@ -1,21 +1,21 @@
 {
-  "title": "Getting Started with Hazelcast SQL",
-  "description": "An interactive introduction to Hazelcast SQL",
+  "title": "Quickstart",
+  "description": "An interactive introduction to Hazelcast",
   "difficulty": "Beginner",
   "time": "5",
   "details": {
     "steps": [
       {
-        "title": "Start Hazelcast",
+        "title": "Start a Local Member",
         "text": "step1.md",
         "code": "start-member.sh"
       },
       {
-        "title": "Start an SQL Shell",
+        "title": "Connect to Management Center",
         "text": "step2.md"
       },
       {
-        "title": "Query Static Data from a File",
+        "title": "Write Data to Memory",
         "text": "step3.md"
       }
     ],
