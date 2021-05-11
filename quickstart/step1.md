@@ -4,6 +4,4 @@ To get you started, we're installing Hazelcast in the background.
 
 When the installation is finished, start a member by running the following command:
 
-```bash
-hz start
-```
+`hz start`

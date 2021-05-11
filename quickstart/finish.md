@@ -1,1 +1,1 @@
-To continue learning about Hazelcast, go back to the [documentation](https://platform-prototype--nifty-wozniak-71a44b.netlify.app/platform/5.0.0).
+To continue learning about Hazelcast, go back to the [documentation](https://hardcore-allen-f5257d.netlify.app/platform/5.0-snapshot/index.html).
