@@ -24,11 +24,12 @@
     }
   },
   "environment": {
-    "showdashboard": false,
+    "showdashboard": true,
+    "dashboards": [{"name": "Management Center", "port": 8080, "href": "https://[[HOST_SUBDOMAIN]]-8080-[[KATACODA_HOST]].environments.katacoda.com"}],
     "hideintro": true,
     "uilayout": "terminal-iframe"
   },
   "backend": {
-    "imageid": "openjdk:11"
+    "imageid": "ubuntu:1804"
   }
 }
