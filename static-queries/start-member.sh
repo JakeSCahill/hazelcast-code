@@ -9,7 +9,7 @@ printf "3,Mary,73\n" >> csv-dir/likes.csv
 printf "4,Jerry,88\n" >> csv-dir/likes.csv
 docker run \
   -it \
-  -v csv-dir:/csv-dir \
+  -v "$(pwd)"/csv-dir:/csv-dir \
   --network hazelcast-network \
   --rm \
   -e HZ_CLUSTERNAME=hello-world \
