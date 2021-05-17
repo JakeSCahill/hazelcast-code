@@ -29,6 +29,6 @@
     "uilayout": "terminal-iframe"
   },
   "backend": {
-    "imageid": "openjdk:11"
+    "imageid": "ubuntu:1804"
   }
 }
