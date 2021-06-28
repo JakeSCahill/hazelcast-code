@@ -62,7 +62,7 @@ The data that you will push to Kafka will be JSON messages with trading informat
   (2, 'EFGH', 14, 20);
   </code>
 
-. Go back to terminal 2 where you created the streaming query.
+1. Go back to terminal 2 where you created the streaming query.
 
   You should see that Hazelcast has executed the query and filtered the results:
 
