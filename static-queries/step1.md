@@ -1,6 +1,6 @@
 This tutorial walks you through the most essential Hazelcast SQL statements.
 
-To get you started, we're installing Hazelcast and starting a Hazelcast member.
+To get you started, we're installing Hazelcast and starting a Hazelcast member. We are also loading some test data in a CSV file that you can use to run queries.
 
 Before clicking **Continue**, wait until you see the following in the terminal:
 

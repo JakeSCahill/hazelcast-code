@@ -1,4 +1,4 @@
-In this step, you load and query data from a `.csv` file that has the following contents:
+In this step, you load and query data from a CSV file, which has the following contents:
 
 ```
 id,name,likes
@@ -35,7 +35,7 @@ id,name,likes
     +------------+--------------------+------------+
     ```
 
-1. Use the `SELECT` statement to query the `name` column and to aggregate the total number of likes for each person.
+1. Use the `SUM()` function to aggregate the total number of likes for each person and group the results by name.
 
     <code class="execute T2" title="Run command">
     SELECT name, sum(likes) AS total_likes FROM csv_likes GROUP BY name;
@@ -52,3 +52,34 @@ id,name,likes
     |Mary                |                  73|
     +--------------------+--------------------+
     ```
+
+    The results do not include a rows for each Jerry because the `GROUP BY` statement groups the results by name.
+
+1. Create a mapping to a new table called `dislikes`.
+
+    <code class="execute T2" title="Run command">
+    CREATE MAPPING dislikes (
+    name VARCHAR,
+    dislikes INT,
+    ) TYPE IMap OPTIONS ('keyFormat'='int', 'valueFormat'='json');
+    </code>
+
+    This table is mapped to a distributed map in Hazelcast where the key is an integer and the value is an object that's serialized in JSON.
+
+1. Add some data to the map.
+
+    <code class="execute T2" title="Run command">
+    SINK INTO dislikes VALUES(1, 'Greg', 0);
+    SINK INTO dislikes VALUES(2, 'Jerry', 5);
+    SINK INTO dislikes VALUES(3, 'Mary', 5);
+    SINK INTO dislikes VALUES(4, 'Jerry', 20);
+    </code>
+
+1. Join the `likes` and `dislikes` tables so you can see who has the most likes and dislikes.
+
+    <code class="execute T2" title="Run command">
+    SELECT likes.name, likes.likes, dislikes.dislikes
+    FROM likes
+    JOIN dislikes
+    ON likes.name = dislikes.name;
+    </code>
