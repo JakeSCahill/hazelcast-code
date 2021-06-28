@@ -17,6 +17,10 @@
       {
         "title": "Query Static Data in a File",
         "text": "step3.md"
+      },
+      {
+        "title": "Query Streaming Data from Kafka",
+        "text": "step4.md"
       }
     ],
     "finish": {
