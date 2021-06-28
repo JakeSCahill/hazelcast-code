@@ -17,7 +17,9 @@ The data that you will push to Kafka will be JSON messages with trading informat
   docker run --name kafka --network hazelcast-network --rm hazelcast/hazelcast-quickstart-kafka
   </code>
 
-1. In the SQL shell, `CREATE MAPPING` statement to allow Hazelcast to access data that is pushed to the Kafka server.
+ **Note:** Make sure to wait until the Kafka server has started before moving onto the next step. You should see the following line: `Recorded new controller, from now on will use broker 0`.
+
+1. Use the `CREATE MAPPING` statement to allow Hazelcast to access data that is pushed to the Kafka server.
 
   <code class="execute T2" title="Run command">
   CREATE MAPPING trades (
@@ -35,9 +37,9 @@ The data that you will push to Kafka will be JSON messages with trading informat
 1. Write a streaming query that filters trade events from Kafka and adds them to a table.
 
   <code class="execute T2" title="Run command">
-  SELECT ticker, ROUND(price * 100) AS price_cents, amount
+  SELECT ticker, ROUND(price \* 100) AS price_cents, amount
   FROM trades
-  WHERE price * amount > 100;
+  WHERE price \* amount > 100;
   </code>
 
   ```
@@ -60,7 +62,7 @@ The data that you will push to Kafka will be JSON messages with trading informat
   (2, 'EFGH', 14, 20);
   </code>
 
-. Go back to the terminal where you created the streaming query.
+. Go back to terminal 2 where you created the streaming query.
 
   You should see that Hazelcast has executed the query and filtered the results:
 
