@@ -1,1 +1,1 @@
-To continue learning about Hazelcast, go back to the [documentation](https://hardcore-allen-f5257d.netlify.app/platform/5.0-snapshot/index.html).
+To continue learning about Hazelcast, go back to the [documentation](https://docs.hazelcast.com/hazelcast/5.0-beta-1/index.html).

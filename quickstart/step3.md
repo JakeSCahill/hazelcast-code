@@ -1,26 +1,24 @@
-Hazelcast has lots of distributed data structures available for writing data to memory on your cluster.
 
-One of the most popular ways of writing data to memory is to use a distributed map.
+Hazelcast has lots of distributed data structures available for writing data to memory on your cluster. One of the most popular ways of writing data to memory is to use a distributed map. Maps store key/value pairs called entries, which are replicated and distributed across a cluster.
 
-Maps store key/value pairs called entries, which are replicated and distributed across a cluster.
+The quickest way to write some data to a map is to use the CLI console.
 
-The quickest way to write some data to a map is to use the console in Management Center.
+1. To start the console, use the following command in a new terminal window:
 
-. In Management Center, click **View Cluster** to open your dashboard.
+    `hz console`{{execute T4}}
 
-. In the top-right corner, click **Console**.
+1. Enter the following to create a map and write some data to it:
+    - `ns my-distributed-map`
+    - `m.put "1" "John"`
+    - `m.put "2" "Mary"`
+    - `m.put "3" "Jane"`
 
-. Enter the following to create a map and write some data to it:
-+
-- `ns my-distributed-map`
-- `m.put "1" "John"`
-- `m.put "2" "Mary"`
-- `m.put "3" "Jane"`
-+
-You'll see that each of the `m.put` lines returns `null`, which means that the data was written to the map.
+    You'll see that each of the `m.put` lines returns `null`, which means that the data was written to the map.
 
-. To exit the console, click **Cancel** in the top-right corner.
+1. Exit the console.
 
-. Go to **Storage** > **Maps**.
-+
+    `exit`
+
+1. In Management Center, go to **Storage** > **Maps**.
+
 You should see that your cluster has a map called `my-distributed-map` with three entries (keys and values). You'll also see the total amount of memory that those entries are taking up in your cluster.
