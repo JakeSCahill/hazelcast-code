@@ -5,7 +5,7 @@ The quickest way to write some data to a map is to use the CLI console.
 
 1. To start the console, use the following command in a new terminal window:
 
-    `hz console`{{execute T4}}
+    `hz-cli console`{{execute T4}}
 
 1. Enter the following to create a map and write some data to it:
     - `ns my-distributed-map`
