@@ -13,7 +13,9 @@ The quickest way to write some data to a map is to use the CLI console.
     - `m.put "2" "Mary"`
     - `m.put "3" "Jane"`
 
-    You'll see that each of the `m.put` lines returns `null`, which means that the data was written to the map.
+    You'll see that each of the `m.put` commands returns `null`, which means that the data was written to the map.
+
+    The `m.put` command returns the previous value that was stored in the given key. Because the map was empty, the previous value was `null`.
 
 1. Exit the console.
 
@@ -21,4 +23,4 @@ The quickest way to write some data to a map is to use the CLI console.
 
 1. In Management Center, go to **Storage** > **Maps**.
 
-You should see that your cluster has a map called `my-distributed-map` with three entries (keys and values). You'll also see the total amount of memory that those entries are taking up in your cluster.
+You should see that your cluster has a map called `my-distributed-map` with three entries. You'll also see the total amount of memory that those entries are taking up in your cluster.

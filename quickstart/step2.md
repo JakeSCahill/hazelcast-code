@@ -6,12 +6,16 @@
 
     `hz mc start`{{execute T3}}
 
-1. You should see that Hazelcast Management Center successfully started at http://localhost:8080/.
+    You should see that Hazelcast Management Center successfully started.
 
-1. To go to this web address, click the tab labelled Management Center.
+1. To open Management Center, click the tab labelled Management Center.
+
+    ![Management Center tab](./assets/tab.png)
 
 1. On the landing page of Management Center, enable dev mode.
 
+    ![Management Center dev mode](./assets/dev-mode.png)
+
 1. Create a connection, using the default settings.
 
-You should see that you cluster is in an active state and has a single member. An active cluster is stable and operating without restrictions.
+You should see that you cluster is in an `ACTIVE` state and has a single member. An active cluster is stable and operating without restrictions.
