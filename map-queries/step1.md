@@ -1,4 +1,4 @@
-This tutorial walks you through how to use SQL over Kafka with Hazelcast.
+This tutorial walks you through how to use SQL over maps with Hazelcast.
 
 To get you started, we're installing Hazelcast and starting a Hazelcast member.
 
