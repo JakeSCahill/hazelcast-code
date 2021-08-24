@@ -1,74 +1,90 @@
-In this step, you use SQL to get data from a [Kafka](https://kafka.apache.org/) topic and display the results of a query.
+Ad-hoc queries allow you to retrieve a small subset of data. Usually these queries are simple and you can have many of them running concurrently in a Hazelcast cluster.
 
-The data that you will push to Kafka will be JSON messages with trading information such as the following:
 
-```json
-{
-    "id": 1,
-    "ticker": "ABCD",
-    "price": 5.5,
-    "amount": 10
-}
-```
+1. Use the `SELECT` statement to query all the data in the `likes.csv` file.
 
-1. Start a Kafka server.
+    <code class="execute T2" title="Run command">
+    SELECT * FROM csv_likes;
+    </code>
 
-  <code class="execute T3" title="Run command">
-  docker run --name kafka --network hazelcast-network --rm hazelcast/hazelcast-quickstart-kafka
-  </code>
+    You should see the following:
 
- **Note:** Make sure to wait until the Kafka server has started before moving onto the next step. You should see the following line: `Recorded new controller, from now on will use broker 0`.
+    ```
+    +------------+--------------------+------------+
+    |          id|name                |       likes|
+    +------------+--------------------+------------+
+    |           1|Jerry               |          13|
+    |           2|Greg                |         108|
+    |           3|Mary                |          73|
+    |           4|Jerry               |          88|
+    +------------+--------------------+------------+
+    ```
 
-1. Use the `CREATE MAPPING` statement to allow Hazelcast to access data that is pushed to the Kafka server.
+1. Query only the `name` and `likes` columns, by adding them as a comma-separated list after the `SELECT` statement.
 
-  <code class="execute T2" title="Run command">
-  CREATE MAPPING trades (
-      id BIGINT,
-      ticker VARCHAR,
-      price DECIMAL,
-      amount BIGINT)
-  TYPE Kafka
-  OPTIONS (
-      'valueFormat' = 'json',
-      'bootstrap.servers' = 'kafka:9092'
-  );
-  </code>
+    <code class="execute T2" title="Run command">
+    SELECT name, likes FROM csv_likes;
+    </code>
 
-1. Write a streaming query that filters trade events from Kafka and adds them to a table.
+    ```
+    +--------------------+------------+
+    |name                |       likes|
+    +--------------------+------------+
+    |Jerry               |          13|
+    |Greg                |         108|
+    |Mary                |          73|
+    |Jerry               |          88|
+    +--------------------+------------+
+    ```
 
-  <code class="execute T2" title="Run command">
-  SELECT ticker, ROUND(price \* 100) AS price_cents, amount
-  FROM trades
-  WHERE price \* amount > 100;
-  </code>
+1. Use a filter to display only the names of people with more than 20 likes.
 
-  ```
-  +------------+----------------------+-------------------+
-  |ticker      |           price_cents|             amount|
-  +------------+----------------------+-------------------+
-  ```
-  
-  Streaming queries like this one continue to run until you close the shell or kill the process with **Ctrl** + **C**.
+    <code class="execute T2" title="Run command">
+    SELECT name FROM csv_likes WHERE likes > 20;
+    </code>
 
-1. Open another SQL shell.
+    ```
+    +--------------------+
+    |name                |
+    +--------------------+
+    |Greg                |
+    |Mary                |
+    |Jerry               |
+    +--------------------+
+    ```
 
-  `docker run --network hazelcast-network -it --rm hazelcast/hazelcast:5.0-SNAPSHOT hazelcast --targets hello-world@172.19.0.2 sql`{{execute T4}}
+1. Give the `name` column an alias for the query results.
 
-1. In the new SQL shell, add some messages to the Kafka topic.
+    **Note:** This clause does not rename the column in the table.
 
-  <code class="execute T4" title="Run command">
-  INSERT INTO trades VALUES
-  (1, 'ABCD', 5.5, 10),
-  (2, 'EFGH', 14, 20);
-  </code>
+    <code class="execute T2" title="Run command">
+    SELECT name AS popular_users, likes
+    FROM csv_likes
+    WHERE likes > 20;
+    </code>
+    
+    ```
+    +--------------------+------------+
+    |popular_users       |       likes|
+    +--------------------+------------+
+    |Greg                |         108|
+    |Mary                |          73|
+    |Jerry               |          88|
+    +--------------------+------------+
+    ```
 
-1. Go back to terminal 2 where you created the streaming query.
+1. To filter rows on more than one condition, you can join conditions with the `AND`, `OR`, and `NOT` operators.
 
-  You should see that Hazelcast has executed the query and filtered the results:
+    <code class="execute T2" title="Run command">
+    SELECT *
+    FROM csv_likes
+    WHERE likes > 20 AND name = 'Mary';
+    </code>
 
-  ```
-  +-----------------+----------------------+-------------------+
-  |ticker           |           price_cents|             amount|
-  +-----------------+----------------------+-------------------+
-  |EFGH             |                  1400|                 20|
-  ```
+    ```
+    +------------+--------------------+------------+
+    |          id|name                |       likes|
+    +------------+--------------------+------------+
+    |           3|Mary                |          73|
+    +------------+--------------------+------------+
+    ```

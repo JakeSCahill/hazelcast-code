@@ -1,1 +1,1 @@
-To continue learning about Hazelcast, go back to the [documentation](https://docs.hazelcast.com/hazelcast/5.0-beta-1/index.html).
+To continue learning about Hazelcast, go back to the [documentation](https://docs.hazelcast.com/hazelcast/latest/index.html).

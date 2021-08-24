@@ -1,5 +1,5 @@
 {
-  "title": "Getting Started with SQL Over Files",
+  "title": "Getting Started with SQL Over Kafka",
   "description": "An interactive introduction to SQL in Hazelcast",
   "difficulty": "Beginner",
   "time": "5",
@@ -11,23 +11,23 @@
         "code": "start-member.sh"
       },
       {
-        "title": "Start an SQL Shell",
+        "title": "Start Kafka",
         "text": "step2.md"
       },
       {
-        "title": "Configure the File Connector",
+        "title": "Start an SQL Shell",
         "text": "step3.md"
       },
       {
-        "title": "Run Ad-Hoc Queries",
+        "title": "Configure the Kafka Connector",
         "text": "step4.md"
       },
       {
-        "title": "Run Batch Queries",
+        "title": "Run Streaming Queries",
         "text": "step5.md"
       },
       {
-        "title": "Run Federated Queries",
+        "title": "Ingest Query Results into a Hazelcast Map",
         "text": "step6.md"
       }
     ],
