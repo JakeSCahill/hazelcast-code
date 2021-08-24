@@ -1,5 +1,5 @@
 {
-  "title": "Getting Started with SQL Over Files",
+  "title": "Getting Started with SQL Over Maps",
   "description": "An interactive introduction to SQL in Hazelcast",
   "difficulty": "Beginner",
   "time": "5",
@@ -15,7 +15,7 @@
         "text": "step2.md"
       },
       {
-        "title": "Configure the File Connector",
+        "title": "Configure the Map Connector",
         "text": "step3.md"
       },
       {
@@ -25,10 +25,6 @@
       {
         "title": "Run Batch Queries",
         "text": "step5.md"
-      },
-      {
-        "title": "Run Federated Queries",
-        "text": "step6.md"
       }
     ],
     "finish": {
