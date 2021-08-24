@@ -89,18 +89,17 @@
     |countries           |
     +--------------------+
     |United States       |
-    |Turkey              |
     |Australia           |
     +--------------------+
     ```
 
 1. Use another filter to display only countries beginning with the letter C where the name of the capital city is at least 6 characters long.
 
-    <code class="execute T2" title="Run command">
+    ```sql
     SELECT __key AS countries
     FROM cities
     WHERE LENGTH(this) >= 6 AND __key LIKE 'C%';
-    </code>
+    ```
 
     ```
     +--------------------+
@@ -146,12 +145,12 @@
 
 1. Use the `JOIN` clause to merge results from the `cities` and `population2020` tables so you can see which countries had the most populated captial cities in 2020.
 
-    <code class="execute T2" title="Run command">
+    ```sql
     SELECT cities.__key AS country, cities.this AS city, population2020.this AS population
     FROM cities
     JOIN population2020
     ON cities.this = population2020.__key;
-    </code>
+    ```
 
     ```
     +--------------------+--------------------+------------+
@@ -167,13 +166,13 @@
 
 1. Use the `ORDER BY` clause to order the results alphabetically by country.
 
-    <code class="execute T2" title="Run command">
+    ```sql
     SELECT cities.__key AS country, cities.this AS city, population2020.this AS population
     FROM cities
     JOIN population2020
     ON cities.this = population2020.__key
     ORDER BY cities.__key;
-    </code>
+    ```
 
     ```
     +--------------------+--------------------+------------+
