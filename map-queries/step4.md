@@ -1,4 +1,5 @@
 1. Query all data in the map.
+
     <code class="execute T2" title="Run command">
     SELECT * FROM cities;
     </code>
