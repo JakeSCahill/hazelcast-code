@@ -1,4 +1,4 @@
-1. Use the `SUM()` function to find the total population of all the cities in 2020.
+1. Find the total population of all the cities in 2020.
 
     <code class="execute T2" title="Run command">
     SELECT SUM(population2020.this) AS total_population
@@ -17,11 +17,11 @@
 
 1. Filter for cities that had a population of more than 1,000,000 in 2020.
 
-    <code class="execute T2" title="Run command">
+    ```sql
     SELECT population2020.__key AS large_cities
     FROM population2020
     GROUP BY population2020.__key HAVING SUM(population2020.this) > 1000000;
-    </code>
+    ```
 
     ```
     +--------------------+

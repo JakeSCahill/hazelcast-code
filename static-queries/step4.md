@@ -1,7 +1,7 @@
 Ad-hoc queries allow you to retrieve a small subset of data. Usually these queries are simple and you can have many of them running concurrently in a Hazelcast cluster.
 
 
-1. Use the `SELECT` statement to query all the data in the `likes.csv` file.
+1. Query all the data in the `likes.csv` file.
 
     <code class="execute T2" title="Run command">
     SELECT * FROM csv_likes;

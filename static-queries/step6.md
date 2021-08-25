@@ -2,7 +2,7 @@ Federated queries are those that join tables from different datasets.
 
 Normally, querying in SQL is database or dataset-specific. However, with Hazelcast, you can pull information from different sources and present a more complete picture of the data.
 
-1. Configure the map connector to create a new table called `dislikes`.
+1. Create a mapping to new map called `dislikes`.
 
     <code class="execute T2" title="Run command">
     CREATE MAPPING dislikes (
@@ -31,7 +31,7 @@ Normally, querying in SQL is database or dataset-specific. However, with Hazelca
     SINK INTO dislikes VALUES(4, 'Jerry', 0);
     </code>
 
-1. Use the `JOIN` clause to merge results from the `likes` and `dislikes` tables so you can see who has the most likes and dislikes.
+1. Merge results from the `likes` and `dislikes` tables so you can see who has the most likes and dislikes.
 
     **Note:** The data source on the right of the join must always be a map.
 
@@ -53,7 +53,7 @@ Normally, querying in SQL is database or dataset-specific. However, with Hazelca
     +--------------------+------------+------------+
     ```
 
-1. Use the `ORDER BY` clause to order the results by name and use the `LIMIT` clause to limit them so that only the first two are displayed.
+1. Order the results by name and limit them so that only the first two are displayed.
 
     <code class="execute T2" title="Run command">
     SELECT csv_likes.name, csv_likes.likes, dislikes.dislikes
