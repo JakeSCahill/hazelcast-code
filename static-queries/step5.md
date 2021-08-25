@@ -1,6 +1,6 @@
 Batch queries allow you to query large datasets either in one or multiple systems and/or run aggregations on them to get deeper insights. Usually these queries are complex and you can run a small number of them concurrently in a Hazelcast cluster.
 
-1. Use the `SUM()` function to aggregate the total number of likes for each person and group the results by name.
+1. Aggregate the total number of likes for each person and group the results by name.
 
     <code class="execute T2" title="Run command">
     SELECT name, sum(likes) AS total_likes FROM csv_likes GROUP BY name;

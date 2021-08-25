@@ -1,4 +1,4 @@
-1. Write a streaming query that filters trade events from Kafka and adds them to a table.
+1. Write a streaming query that filters trade events from Kafka.
 
     <code class="execute T3" title="Run command">
     SELECT ticker, ROUND(price \* 100) AS price_cents, amount
@@ -16,7 +16,7 @@
 
 1. Open another SQL shell.
 
-    `docker run --network hazelcast-network -it --rm hazelcast/hazelcast:5.0-BETA-2 hazelcast --targets hello-world@172.19.0.2 sql`{{execute T4}}
+    `docker run --network hazelcast-network -it --rm hazelcast/hazelcast:5.0-SNAPSHOT hz-cli --targets hello-world@172.19.0.2 sql`{{execute T4}}
 
 1. In the new SQL shell, add some messages to the Kafka topic.
 
@@ -31,8 +31,8 @@
     You should see that Hazelcast has executed the query and filtered the results:
 
     ```
-    +-----------------+----------------------+-------------------+
-    |ticker           |           price_cents|             amount|
-    +-----------------+----------------------+-------------------+
-    |EFGH             |                  1400|                 20|
+    +---------+--------------+-----------+
+    |ticker   |   price_cents|     amount|
+    +---------+--------------+-----------+
+    |EFGH     |          1400|         20|
     ```

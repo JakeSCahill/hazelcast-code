@@ -1,6 +1,6 @@
 Before you can query data in a map, you need to create a mapping to one with the map connector.
 
-1. Use the `CREATE MAPPING` statement to configure the map connector and set up an SQL connection to a new map called `cities`.
+1. Create a mapping to a new map called `cities`.
 
     <code class="execute T2" title="Run command">
     CREATE MAPPING cities

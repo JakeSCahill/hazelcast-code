@@ -1,4 +1,4 @@
-1. Use the `SELECT` statement to query all data in the map.
+1. Query all data in the map.
     <code class="execute T2" title="Run command">
     SELECT * FROM cities;
     </code>
@@ -110,7 +110,7 @@
     +--------------------+
     ```
 
-1. Configure the map connector to create a new map table called `population2020`.
+1. Create a mapping to a new map called `population2020`.
 
     <code class="execute T2" title="Run command">
     CREATE MAPPING population2020
@@ -143,7 +143,7 @@
     INSERT INTO population2020 VALUES ('Washington, DC', 601723);
     </code>
 
-1. Use the `JOIN` clause to merge results from the `cities` and `population2020` tables so you can see which countries had the most populated captial cities in 2020.
+1. Merge results from the `cities` and `population2020` tables so you can see which countries had the most populated captial cities in 2020.
 
     ```sql
     SELECT cities.__key AS country, cities.this AS city, population2020.this AS population
@@ -164,7 +164,7 @@
     +--------------------+--------------------+------------+
     ```
 
-1. Use the `ORDER BY` clause to order the results alphabetically by country.
+1. Order the results alphabetically by country.
 
     ```sql
     SELECT cities.__key AS country, cities.this AS city, population2020.this AS population

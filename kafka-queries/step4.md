@@ -1,4 +1,4 @@
-Use the `CREATE MAPPING` statement to allow Hazelcast to access data that is pushed to the Kafka server.
+Create a mapping to your Kafka server to allow Hazelcast to access data that is pushed to it.
 
 <code class="execute T3" title="Run command">
 CREATE MAPPING trades (

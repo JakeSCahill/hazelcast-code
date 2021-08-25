@@ -8,7 +8,7 @@ id,name,likes
 4,Jerry,88
 ```
 
-Use the `CREATE MAPPING` statement to give Hazelcast access to the data in the `likes.csv` file.
+Create a mapping to the file to give Hazelcast access to the data in the `likes.csv` file.
 
 <code class="execute T2" title="Run command">
 CREATE MAPPING csv_likes (id INT, name VARCHAR, likes INT) TYPE File OPTIONS ('format'='csv','path'='/csv-dir', 'glob'='likes.csv');
