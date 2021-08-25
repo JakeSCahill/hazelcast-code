@@ -80,6 +80,6 @@ To be able to ingest data, you need to set up a _job_ to allow the streaming que
 
     ```
     Execution of job '062d-d578-9240-0001', execution 062d-d578-df80-0001 got terminated, reason=java.util.concurrent.CancellationException
-        Start time: 2021-05-13T16:31:14.410
-        Duration: 00:02:48.318
+    Start time: 2021-05-13T16:31:14.410
+    Duration: 00:02:48.318
     ```

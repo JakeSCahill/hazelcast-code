@@ -120,27 +120,12 @@
 1. Add the 2020 populations of the following cities.
 
     <code class="execute T2" title="Run command">
-    INSERT INTO population2020 VALUES ('Canberra', 354644);
-    </code>
-
-    <code class="execute T2" title="Run command">
-    INSERT INTO population2020 VALUES ('Zagreb', 804200);
-    </code>
-
-    <code class="execute T2" title="Run command">
-    INSERT INTO population2020 VALUES ('Prague', 1227332);
-    </code>
-
-    <code class="execute T2" title="Run command">
-    INSERT INTO population2020 VALUES ('London', 8174100);
-    </code>
-
-    <code class="execute T2" title="Run command">
-    INSERT INTO population2020 VALUES ('Ankara', 4890893);
-    </code>
-
-    <code class="execute T2" title="Run command">
-    INSERT INTO population2020 VALUES ('Washington, DC', 601723);
+    INSERT INTO population2020 VALUES ('Canberra', 354644),
+    ('Zagreb', 804200),
+    ('Prague', 1227332),
+    ('London', 8174100),
+    ('Ankara', 4890893),
+    ('Washington, DC', 601723);
     </code>
 
 1. Merge results from the `cities` and `population2020` tables so you can see which countries had the most populated captial cities in 2020.

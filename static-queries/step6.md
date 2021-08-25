@@ -16,19 +16,11 @@ Normally, querying in SQL is database or dataset-specific. However, with Hazelca
 1. Use `SINK INTO` statements to add some entries to the map.
 
     <code class="execute T2" title="Run command">
-    SINK INTO dislikes VALUES(1, 'Greg', 1);
-    </code>
-
-    <code class="execute T2" title="Run command">
-    SINK INTO dislikes VALUES(2, 'Jerry', 0);
-    </code>
-
-    <code class="execute T2" title="Run command">
-    SINK INTO dislikes VALUES(3, 'Mary', 5);
-    </code>
-
-    <code class="execute T2" title="Run command">
-    SINK INTO dislikes VALUES(4, 'Jerry', 0);
+    SINK INTO dislikes VALUES
+    (1, 'Greg', 1),
+    (2, 'Jerry', 0),
+    (3, 'Mary', 5),
+    (4, 'Jerry', 0);
     </code>
 
 1. Merge results from the `likes` and `dislikes` tables so you can see who has the most likes and dislikes.
