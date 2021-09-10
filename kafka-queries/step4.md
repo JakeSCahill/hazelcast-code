@@ -1,4 +1,4 @@
-Create a mapping to your Kafka server to allow Hazelcast to access data that is pushed to it.
+Create a mapping to your Kafka broker.
 
 <code class="execute T3" title="Run command">
 CREATE MAPPING trades (
@@ -24,5 +24,5 @@ The `valueFormat` option is JSON because the data that you will push to Kafka wi
 }
 ```
 
-The `bootstrap.servers` option is the address of the Kafka server to allow Hazelcast to connect to it. In this example, the Kafka server is running in a Docker container called `kafka` on port 9092.
+The `bootstrap.servers` option is the address of the Kafka broker to allow Hazelcast to connect to it. In this example, the broker is running in a Docker container called `kafka` on port 9092.
 

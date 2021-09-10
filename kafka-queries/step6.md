@@ -1,85 +1,57 @@
-As well as querying and transforming data, you can ingest results into other systems, including Hazelcast maps to avoid running redundant queries.
+Kafka messages are often small and contain minimal data to reduce network latency. For example, the `trades` topic does not contain any information about the company that's associated with a given ticker. To get deeper insights from data in Kafka topics, you can join query results with data in other mappings.
 
-However, because Kafka is a streaming source, your query continues to run until it is canceled and results are returned to the SQL shell as soon as they are ready.
-
-To be able to ingest data, you need to set up a _job_ to allow the streaming query to run in the background and send the results elsewhere.
-
-1. Create a mapping to a new map in which to store your streaming query results.
+1. Create a mapping to a new map in which to store the company information that you'll use to enrich results from the `trades` topic.
 
     <code class="execute T4" title="Run command">
-    CREATE MAPPING tradeMap (
+    CREATE MAPPING companies (
     __key BIGINT,
     ticker VARCHAR,
-    price DECIMAL,
-    amount BIGINT)
+    company VARCHAR,
+    marketcap BIGINT)
     TYPE IMap
     OPTIONS (
     'keyFormat'='bigint',
-    'valueFormat'='json');
+    'valueFormat'='json-flat');
     </code>
 
-1. Submit a streaming job to your cluster that will monitor your Kafka topic (`SELECT id, ticker, price, amount FROM trades`) for changes and store them in a map (`SINK INTO tradeMap`).
+1. Add some entries to the `companies` map.
 
     <code class="execute T4" title="Run command">
-    CREATE JOB ingest_trades AS
-    SINK INTO tradeMap
-    SELECT id, ticker, price, amount
-    FROM trades;
+    INSERT INTO companies VALUES
+    (1, 'ABCD', 'The ABCD', 100000),
+    (2, 'EFGH', 'The EFGH', 5000000);
     </code>
 
-    **Note:** A streaming job will run indefinitely until it is explicitly canceled or the cluster is shut down. Even if you kill the shell connection, the job will continue running on the cluster.
-
-1. List your job to make sure that it was successfully submitted.
+1. Use the xref:sql:select.adoc#join-tables[`JOIN` clause] to merge results from the `companies` map and `trades` topic so you can see which companies are being traded.
 
     <code class="execute T4" title="Run command">
-    SHOW JOBS;
-    </code>
-
-    You should see a job called `ingest_trades`.
+    SELECT trades.ticker, companies.company, trades.amount
+    FROM trades
+    JOIN companies
+    ON companies.ticker = trades.ticker;
 
     ```
-    +--------------------+
-    |name                |
-    +--------------------+
-    |ingest_trades       |
-    +--------------------+
+    +------------+-----------+----------+
+    |ticker      |company    |    amount|
+    +------------+-----------+----------+
     ```
 
-1. Publish some events to the Kafka topic.
+1. In another SQL shell, publish some messages to the `trades` topic.
 
-    <code class="execute T4" title="Run command">
+    <code class="execute T5" title="Run command">
     INSERT INTO trades VALUES
     (1, 'ABCD', 5.5, 10),
     (2, 'EFGH', 14, 20);
     </code>
 
-1. Query your `tradeMap` map to see that the Kafka data has been added to it.
+1. Go back to terminal 4 where you created the streaming query that merges results from the `companies` map and `trades` topic.
 
-    <code class="execute T4" title="Run command">
-    SELECT * FROM tradeMap;
-    </code>
-
-    You should see that the data coming from Kafka is being stored in your map.
+    You should see that Hazelcast has executed the query.
 
     ```
-    +---------+---------+----------+------------+
-    |       id|ticker   |     price|      amount|
-    +---------+---------+----------+------------+
-    |        2|EFGH     |14.000000…|          20|
-    |        1|ABCD     |5.5000000…|          10|
-    +---------+---------+----------+------------+
-    ```
-
-1. To stop your streaming job, use the `DROP` statement to cancel it.
-
-    <code class="execute T4" title="Run command">
-    DROP JOB ingest_trades;
-    </code>
-
-    In the terminal where you started the Hazelcast member, you should see that the job is canceled as well as the time it was started and how long it ran for.
-
-    ```
-    Execution of job '062d-d578-9240-0001', execution 062d-d578-df80-0001 got terminated, reason=java.util.concurrent.CancellationException
-    Start time: 2021-05-13T16:31:14.410
-    Duration: 00:02:48.318
+    +------------+-----------+----------+
+    |ticker      |company    |    amount|
+    +------------+-----------+----------+
+    |ABCD        |The ABCD   |10        |
+    |EFGH        |The EFGH   |20        |
     ```
