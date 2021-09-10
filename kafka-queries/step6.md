@@ -22,7 +22,7 @@ Kafka messages are often small and contain minimal data to reduce network latenc
     (2, 'EFGH', 'The EFGH', 5000000);
     </code>
 
-1. Use the xref:sql:select.adoc#join-tables[`JOIN` clause] to merge results from the `companies` map and `trades` topic so you can see which companies are being traded.
+1. Use the `JOIN` clause to merge results from the `companies` map and `trades` topic so you can see which companies are being traded.
 
     <code class="execute T4" title="Run command">
     SELECT trades.ticker, companies.company, trades.amount
@@ -36,7 +36,11 @@ Kafka messages are often small and contain minimal data to reduce network latenc
     +------------+-----------+----------+
     ```
 
-1. In another SQL shell, publish some messages to the `trades` topic.
+1. Open another SQL shell.
+
+    `docker run --network hazelcast-network -it --rm hazelcast/hazelcast:5.0-SNAPSHOT hz-cli --targets hello-world@172.19.0.2 sql`{{execute T5}}
+
+1. Publish some messages to the `trades` topic.
 
     <code class="execute T5" title="Run command">
     INSERT INTO trades VALUES
