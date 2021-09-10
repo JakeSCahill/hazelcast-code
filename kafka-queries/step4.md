@@ -8,7 +8,7 @@ CREATE MAPPING trades (
     amount BIGINT)
 TYPE Kafka
 OPTIONS (
-    'valueFormat' = 'json',
+    'valueFormat' = 'json-flat',
     'bootstrap.servers' = 'kafka:9092'
 );
 </code>
