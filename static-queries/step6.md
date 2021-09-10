@@ -8,7 +8,7 @@ Normally, querying in SQL is database or dataset-specific. However, with Hazelca
     CREATE MAPPING dislikes (
     name VARCHAR,
     dislikes INT
-    ) TYPE IMap OPTIONS ('keyFormat'='int', 'valueFormat'='json');
+    ) TYPE IMap OPTIONS ('keyFormat'='int', 'valueFormat'='json-flat');
     </code>
 
     This table is mapped to a distributed map in Hazelcast where the key is an integer and the value is an object that's serialized to JSON.
