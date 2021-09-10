@@ -29,6 +29,7 @@ Kafka messages are often small and contain minimal data to reduce network latenc
     FROM trades
     JOIN companies
     ON companies.ticker = trades.ticker;
+    </code>
 
     ```
     +------------+-----------+----------+
