@@ -27,6 +27,10 @@ To save your query results as a view that you can later access faster, you can c
 
   **Note:** A streaming job will run indefinitely until it is explicitly canceled or the cluster is shut down. Even if you kill the shell connection, the job will continue running on the cluster.
 
+1. Open another SQL shell.
+
+    `docker run --network hazelcast-network -it --rm hazelcast/hazelcast:5.0-SNAPSHOT hz-cli --targets hello-world@172.19.0.2 sql`{{execute T6}}
+
 1. List your job to make sure that it was successfully submitted.
 
   <code class="execute T6" title="Run command">
