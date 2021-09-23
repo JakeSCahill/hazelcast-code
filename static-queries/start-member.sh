@@ -1,6 +1,7 @@
 #!/bin/bash
 echo "Starting Hazelcast"
 docker network create hazelcast-network
+docker pull hazelcast/hazelcast
 mkdir csv-dir
 printf "id,name,likes\n" >> csv-dir/likes.csv
 printf "1,Jerry,13\n" >> csv-dir/likes.csv
@@ -13,4 +14,4 @@ docker run \
   --network hazelcast-network \
   --rm \
   -e HZ_CLUSTERNAME=hello-world \
-  -p 5701:5701 hazelcast/hazelcast:5.0-BETA-2
+  -p 5701:5701 hazelcast/hazelcast
