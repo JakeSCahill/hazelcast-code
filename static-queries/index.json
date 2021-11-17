@@ -29,6 +29,10 @@
       {
         "title": "Run Federated Queries",
         "text": "step6.md"
+      },
+      {
+        "title": "Ingest Query Results into a Hazelcast Map",
+        "text": "step7.md"
       }
     ],
     "finish": {
