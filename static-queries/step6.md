@@ -6,6 +6,7 @@ Normally, querying in SQL is database or dataset-specific. However, with Hazelca
 
     <code class="execute T2" title="Run command">
     CREATE MAPPING dislikes (
+    __key INT,
     name VARCHAR,
     dislikes INT
     ) TYPE IMap OPTIONS ('keyFormat'='int', 'valueFormat'='json-flat');
