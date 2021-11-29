@@ -23,16 +23,12 @@
         "text": "step4.md"
       },
       {
-        "title": "Run Batch Queries",
+        "title": "Run Federated Queries",
         "text": "step5.md"
       },
       {
-        "title": "Run Federated Queries",
-        "text": "step6.md"
-      },
-      {
         "title": "Ingest Query Results into a Hazelcast Map",
-        "text": "step7.md"
+        "text": "step6.md"
       }
     ],
     "finish": {

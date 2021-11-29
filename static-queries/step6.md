@@ -1,58 +1,42 @@
-Federated queries are those that join tables from different datasets.
+To save your query results as a view, you can cache them in Hazelcast by ingesting them into a map.
 
-Normally, querying in SQL is database or dataset-specific. However, with Hazelcast, you can pull information from different sources and present a more complete picture of the data.
+1. Configure the map connector to create a new table called `likes_and_dislikes`.
 
-1. Create a mapping to new map called `dislikes`.
+  <code class="execute T2" title="Run command">
+  CREATE MAPPING likes_and_dislikes (
+  __key INT,
+  name VARCHAR,
+  likes INT,
+  dislikes INT
+  ) TYPE IMap OPTIONS ('keyFormat'='int', 'valueFormat'='json-flat');
+  </code>
 
-    <code class="execute T2" title="Run command">
-    CREATE MAPPING dislikes (
-    __key INT,
-    name VARCHAR,
-    dislikes INT
-    ) TYPE IMap OPTIONS ('keyFormat'='int', 'valueFormat'='json-flat');
-    </code>
+  This table is mapped to a distributed map in Hazelcast where the key is an integer and the value is an object that's serialized to JSON.
 
-    This table is mapped to a distributed map in Hazelcast where the key is an integer and the value is an object that's serialized to JSON.
+1. Run the `JOIN` query to merge results from the CSV file and the `dislikes` map and insert them into the `likes_and_dislikes` map.
 
-1. Use `SINK INTO` statements to add some entries to the map.
+  <code class="execute T2" title="Run command">
+  INSERT INTO likes_and_dislikes SELECT csv_likes.msg_id, names.this, csv_likes.likes, csv_likes.dislikes
+  FROM csv_likes
+  JOIN names
+  ON csv_likes.msg_id = names.__key;
+  </code>
 
-    <code class="execute T2" title="Run command">
-    SINK INTO dislikes VALUES
-    (1, 'Greg', 1),
-    (2, 'Jerry', 0),
-    (3, 'Mary', 5),
-    (4, 'Jerry', 0);
-    </code>
+1. Make sure that the query results were added to the map.
 
-1. Merge results from the `likes` and `dislikes` tables so you can see who has the most likes and dislikes.
+  <code class="execute T2" title="Run command">
+  SELECT * FROM likes_and_dislikes
+  ORDER BY __key;
+  </code>
 
-    **Note:** The data source on the right of the join must always be a map.
-
-    <code class="execute T2" title="Run command">
-    SELECT csv_likes.name, csv_likes.likes, dislikes.dislikes
-    FROM csv_likes
-    JOIN dislikes
-    ON csv_likes.id = dislikes.__key;
-    </code>
-
-    ```
-    +--------------------+------------+------------+
-    |name                |       likes|    dislikes|
-    +--------------------+------------+------------+
-    |Jerry               |          13|           0|
-    |Greg                |         108|           5|
-    |Mary                |          73|           5|
-    |Jerry               |          88|          20|
-    +--------------------+------------+------------+
-    ```
-
-1. Order the results by name and limit them so that only the first two are displayed.
-
-    <code class="execute T2" title="Run command">
-    SELECT csv_likes.name, csv_likes.likes, dislikes.dislikes
-    FROM csv_likes
-    JOIN dislikes
-    ON csv_likes.id = dislikes.__key
-    ORDER BY csv_likes.name
-    LIMIT 2;
-    </code>
+  ```
+  +------------+--------------------+------------+------------+
+  |       __key|name                |       likes|    dislikes|
+  +------------+--------------------+------------+------------+
+  |           1|Greg                |          20|          13|
+  |           2|Jerry               |         108|          25|
+  |           3|Mary                |         122|          73|
+  |           4|Jerry               |           9|          88|
+  |           5|Joe                 |          51|          42|
+  +------------+--------------------+------------+------------+
+  ```
