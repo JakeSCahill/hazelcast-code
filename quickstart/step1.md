@@ -4,4 +4,4 @@ In five minutes, you will learn how to install Hazelcast, start a local cluster 
 
 To get you started, we're installing Hazelcast in the background. When the installation is finished, start a member by running the following command:
 
-`hz-start`
+`hz start`
