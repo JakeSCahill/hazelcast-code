@@ -4,7 +4,7 @@
 
 1. Then, click the text below twice to start Management Center in another window.
 
-    `hz-mc start`{{execute T3}}
+    `/usr/lib/hazelcast-management-center/bin/hz-mc start`{{execute T3}}
 
     You should see that Hazelcast Management Center successfully started.
 
