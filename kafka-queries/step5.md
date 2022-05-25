@@ -16,7 +16,7 @@
 
 1. Open another SQL shell.
 
-    `docker run --network hazelcast-network -it --rm hazelcast/hazelcast hz-cli --targets hello-world@172.19.0.2 sql`{{execute T4}}
+    `docker run --network hazelcast-network -it --rm hazelcast/hazelcast hz-cli --targets hello-world@172.17.0.2 sql`{{execute T4}}
 
 1. In the new SQL shell, add some messages to the Kafka topic.
 
