@@ -39,7 +39,7 @@ Kafka messages are often small and contain minimal data to reduce network latenc
 
 1. Open another SQL shell.
 
-    `docker run --network hazelcast-network -it --rm hazelcast/hazelcast hz-cli --targets hello-world@172.19.0.2 sql`{{execute T5}}
+    `docker run --network hazelcast-network -it --rm hazelcast/hazelcast hz-cli --targets hello-world@172.17.0.2 sql`{{execute T5}}
 
 1. Publish some messages to the `trades` topic.
 
